@@ -25,7 +25,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'main', fingerprint: true
+            archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
         }
     }
 }
