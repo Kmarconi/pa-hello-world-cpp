@@ -20,7 +20,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'job/TD-Freestyle-Job-SImple-Cpp/ws/main', fingerprint: true
+            archiveArtifacts artifacts: 'main', fingerprint: true
         }
     }
 }
