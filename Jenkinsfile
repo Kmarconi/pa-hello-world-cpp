@@ -12,9 +12,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './main build'
+                sh 'make'
             }
         }
+	stage('Checkout code') {
+            steps {
+            	checkout scm
+            }
+    	}	
         
     }
 
