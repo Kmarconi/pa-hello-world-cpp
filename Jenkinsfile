@@ -22,8 +22,9 @@ pipeline {
     	}	
         stage('Archivage'){
 	    steps {
-		sh 'mkdir Sauvegarde'
-		sh' cp /*(.) Sauvegarde/'
+		
+		sh' zip -r ../zipped_file.zip *'
+		sh 'mkdir Sauvegarde && cp zipped_file.zip /Sauvegarde'
 	    }
 	}
     }
