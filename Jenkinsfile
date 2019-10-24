@@ -23,7 +23,7 @@ pipeline {
         stage('Archivage'){
 	    steps {
 		sh 'mkdir Sauvegarde'
-		sh' cp -r * Sauvegarde/'
+		sh' cp -r !(Sauvegarde) Sauvegarde/'
 	    }
 	}
     }
