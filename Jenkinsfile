@@ -20,7 +20,12 @@ pipeline {
 		checkout scm
             }
     	}	
-        
+        stage('Archivage'){
+	    steps {
+		sh 'mkdir Sauvegarde'
+		sh 'echo "artifact file" > main.cpp'
+	    }
+	}
     }
 
     post {
