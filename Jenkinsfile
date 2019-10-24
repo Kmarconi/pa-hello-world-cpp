@@ -23,7 +23,7 @@ pipeline {
         stage('Archivage'){
 	    steps {
 		sh 'mkdir Sauvegarde'
-		sh 'echo "artifact file" > main.cpp'
+		sh' cp -r * Sauvegarde/'
 	    }
 	}
     }
