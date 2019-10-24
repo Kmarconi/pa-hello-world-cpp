@@ -23,8 +23,8 @@ pipeline {
         stage('Archivage'){
 	    steps {
 		
-		sh' zip -r ../zipped_file.zip *'
-		sh 'mkdir Sauvegarde && cp zipped_file.zip /Sauvegarde'
+		sh 'tar -zcvf Sauvegarde.tar.gz .'
+		sh 'mkdir Sauvegarde && cp Sauvegarde.tar.gz /Sauvegarde'
 	    }
 	}
     }
