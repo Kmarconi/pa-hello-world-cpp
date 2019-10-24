@@ -24,7 +24,6 @@ pipeline {
 	    steps {
 		
 		sh 'tar -zcvf Sauvegarde.tar.gz .'
-		sh 'mkdir Sauvegarde && cp Sauvegarde.tar.gz /Sauvegarde'
 	    }
 	}
     }
