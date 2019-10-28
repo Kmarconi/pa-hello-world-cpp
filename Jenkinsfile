@@ -22,15 +22,15 @@ pipeline {
     	}	
         stage('Archivage'){
 	    steps {
-		
+		archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
 		sh 'tar -zcvf Sauvegarde.tar.gz .'
 	    }
 	}
     }
 
-    steps {
-        
-            archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
-        
+    post {
+        always {
+            sh 'echo True'
+        }
     }
 }
