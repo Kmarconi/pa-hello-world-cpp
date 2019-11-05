@@ -7,30 +7,14 @@ checkout scm
 sh "make" 
 sh "./main" 
 }
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'make'
-            }
-        }
-	stage('Checkout code') {
-            steps {
-		checkout scm
-            }
-    	}	
-        stage('Archivage'){
-	    steps {
-		archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
-		sh 'tar -zcvf Sauvegarde.tar.gz .'
-	    }
-	}
+node {   
+    stage('Build') {
+        sh 'make'
     }
-
-    post {
-        always {
-            sh 'echo True'
-        }
+    stage('Checkout code') {
+	checkout scm
+    }	
+    stage('Archivage'){
+	     archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
     }
 }
