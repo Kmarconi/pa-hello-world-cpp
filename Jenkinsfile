@@ -15,6 +15,8 @@ node {
 	checkout scm
     }	
     stage('Archivage'){
+	steps{
 	     archiveArtifacts artifacts: 'main', onlyIfSuccessful: true
+	}
     }
 }
